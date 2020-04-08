@@ -22,9 +22,8 @@ ngOnInit(): void {
    */
 passwordData:FormGroup = this.fb.group({
   password: ['',[Validators.required,Validators.pattern]],
-  confirmPassword: ['']
+  confirmPassword: ['',[Validators.required]]
 },
-{validator: this.passwordMatchValidator},
 );
 /**
    * @ function : Submit()
@@ -45,17 +44,5 @@ public submit():void{
  public get formData():any{
 return this.passwordData.controls;
 }
-/**
-   * @ function : passwordMatchValidator()
-   * @ Purpose  : Checking the confirm password with password
-   * @ version  : 1.0.1
-   * @ author   : Shivam
-   */
-  private passwordMatchValidator(frm:FormGroup){
-    let pass = frm.get('password').value;
-    let confirmPass = frm.get('confirmPassword').value;
-  
-    return pass === confirmPass ? null : { mismatch: true }
-  }
   
 }

@@ -5,11 +5,13 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PasswordCheckComponent } from './modules/password-check/password-check.component';
+import { PasswordValidatorDirective } from './shared/directive/password-validator.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PasswordCheckComponent
+    PasswordCheckComponent,
+    PasswordValidatorDirective
   ],
   imports: [
     BrowserModule,
